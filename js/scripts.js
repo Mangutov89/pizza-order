@@ -1,4 +1,4 @@
-//
+
 function Pizza (userName, pizzaTopping, pizzaSize) {
   this.name = userName
   this.pizzaTopping = pizzaTopping,
@@ -7,16 +7,27 @@ function Pizza (userName, pizzaTopping, pizzaSize) {
 }
 
 Pizza.prototype.calculatePizzaTopping = function() {
-  if (this.pizzaTopping === "Cheese") {
+  console.log("step1");
+  if (this.pizzaTopping === "1") {
     this.price -= 4;
-  } else if (this.pizzaTopping === "Pepperoni") {
+    console.log("hello");
+  } else if (this.pizzaTopping === "2") {
     this.price -= 2;
-  } else if (this.pizzaTopping === "Meat lovers") {
+  } else if (this.pizzaTopping === "3") {
     this.price += 2;
-  } else {
+  } else if (this.pizzaTopping === "4") {
     this.price += 4;
   }
+}
 
+Pizza.prototype.calculatePizzaSize = function() {
+  if (this.pizzaSize === "small") {
+    this.price -= 3;
+  } else if (this.pizzaSize === "medium") {
+    this.price -= 1;
+  } else if (this.pizzaSize === "large") {
+    this.price += 2;
+  }
 }
 
 

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/styles.css">
-    <script src="js/jquery.js" charset="utf-8"></script>
+    <script src="js/jquery-3.3.1.js" charset="utf-8"></script>
     <script src="js/scripts.js" charset="utf-8"></script>
     <title>EpiPizza</title>
   </head>
@@ -21,10 +21,10 @@
           <div class="col-sm-3">
             <div class="line">
               <select class="form-control" id="pizzatypes">
-                <option>Cheese</option>
-                <option>Pepperoni</option>
-                <option>Meat lovers</option>
-                <option>Supreme</option>
+                <option value="1">Cheese</option>
+                <option value="2">Pepperoni</option>
+                <option value="3">Meat lovers</option>
+                <option value="4">Supreme</option>
               </select>
             </div>
           </div>
@@ -34,16 +34,15 @@
           <div class="col-sm-3">
             <div class="line">
               <select class="form-control" id="pizzasizes">
-                <option>Small</option>
-                <option>Medium</option>
-                <option>Large</option>
+                <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="large">Large</option>
               </select>
             </div>
           </div>
         </div>
         <button type="submit" name="button" class="btn-info">Proceed to Checkout</button>
       </form>
-      <p class="error" id="invalidAge">You did not input a valid age.</p>
       <div id="output">
       </div>
     </div>
