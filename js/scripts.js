@@ -7,56 +7,34 @@ function Pizza (userName, pizzaTopping, pizzaSize) {
 }
 
 Pizza.prototype.calculatePizzaTopping = function() {
-  console.log("step1");
   if (this.pizzaTopping === "1") {
-    this.price -= 4;
-    console.log("hello");
+    return this.price -= 4;
   } else if (this.pizzaTopping === "2") {
-    this.price -= 2;
+    return this.price -= 2;
   } else if (this.pizzaTopping === "3") {
-    this.price += 2;
+    return this.price += 2;
   } else if (this.pizzaTopping === "4") {
-    this.price += 4;
+    return this.price += 4;
   }
 }
 
 Pizza.prototype.calculatePizzaSize = function() {
-  if (this.pizzaSize === "small") {
-    this.price -= 3;
-  } else if (this.pizzaSize === "medium") {
-    this.price -= 1;
-  } else if (this.pizzaSize === "large") {
-    this.price += 2;
+  if (this.pizzaSize === "1") {
+    return this.price -= 3;
+  } else if (this.pizzaSize === "2") {
+    return this.price -= 1;
+  } else if (this.pizzaSize === "3") {
+    return this.price += 2;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // UI
 $(document).ready(function() {
   $("#pizzaorder").submit(function(event) {
     event.preventDefault();
-
-
-
-
-
-
-
-
-
-
-
+    var userName = $("#nameInput").val();
+    var pizzaTopping = $("#pizzatypes").val();
+    var pizzaSize = $("#pizzasizes").val();
+    var newPizzaOrder = new Pizza(userName, pizzaTopping, pizzaSize);
+    $("#output").text(userName + " your pizza will be $" + newPizzaOrder.calculatePizzaTopping());
   });
 });
